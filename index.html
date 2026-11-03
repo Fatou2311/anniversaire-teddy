@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joyeux anniversaire Teddy Bear 🧸</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ea;--bg2:#f9b9cb;--hint:#7a2b45;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2b1720;--bg2:#4a2036;--hint:#f6c9d6}}
+:root[data-theme="dark"]{--bg1:#2b1720;--bg2:#4a2036;--hint:#f6c9d6}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;height:100%;overflow:hidden;display:grid;place-items:center;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--hint);font-family:'Quicksand',system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+button{font-family:inherit}
+:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#scene{--w:min(86vw,360px,56dvh);position:relative;width:var(--w);height:calc(var(--w)*.68);perspective:1400px;cursor:pointer}
+#scene>*{position:absolute}
+.ep{transition:opacity .9s}
+.away .ep{opacity:0;pointer-events:none}
+#back{inset:0;background:#c98e52;box-shadow:0 18px 40px rgba(90,30,50,.3);z-index:1}
+#pocket{inset:0;z-index:5;clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);background:conic-gradient(from 0deg at 50% 52%,#e6ad70 0 123deg,#f3c897 123deg 237deg,#e6ad70 237deg 360deg)}
+#flap{left:0;right:0;top:0;height:52%;z-index:6;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(#d99d5f,#c4854a);transform-origin:50% 0;transition:transform .8s cubic-bezier(.5,0,.3,1),opacity .9s}
+#flap.up{transform:rotateX(180deg)}
+#flap.behind{z-index:2}
+#to{left:0;right:0;bottom:9%;z-index:7;text-align:center;font:700 clamp(19px,6.4vw,27px) 'Dancing Script',cursive;color:#7a3a1c}
+#stamp{right:5%;bottom:8%;z-index:7;width:12%;aspect-ratio:3/4;display:grid;place-items:center;background:#fff3e6;border:2px dashed #b4683a;border-radius:3px;font-size:clamp(14px,5vw,22px);transform:rotate(6deg)}
+#stamp::after{content:"";position:absolute;width:160%;aspect-ratio:1;left:-85%;top:-5%;border:2px solid rgba(120,30,50,.45);border-radius:50%}
+#seal{left:50%;top:52%;z-index:8;width:calc(var(--w)*.17);aspect-ratio:1;margin:calc(var(--w)*-.085) 0 0 calc(var(--w)*-.085);border:0;border-radius:50%;cursor:pointer;display:grid;place-items:center;color:#ffd3dc;font-size:calc(var(--w)*.075);text-shadow:0 -1px 0 rgba(0,0,0,.35);background:radial-gradient(circle at 35% 30%,#d6455f,#8e1a33 72%);box-shadow:0 3px 8px rgba(0,0,0,.4),inset 0 0 0 3px rgba(255,255,255,.14),inset 0 0 0 7px rgba(0,0,0,.1);animation:pulse 1.8s ease-in-out infinite}
+#seal.pop{animation:pop .5s forwards}
+#seal.stampin{animation:stampin .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pulse{50%{transform:scale(1.1)}}
+@keyframes pop{to{transform:scale(1.7) rotate(30deg);opacity:0}}
+@keyframes stampin{from{transform:scale(2.2);opacity:0}}
+#top{bottom:calc(100% + 26px);left:-10%;right:-10%;text-align:center;font:700 clamp(24px,7.4vw,32px) 'Dancing Script',cursive}
+#hint{top:calc(100% + 30px);left:-10%;right:-10%;text-align:center;font-weight:700;font-size:15px;animation:blink 2s ease-in-out infinite}
+@keyframes blink{50%{opacity:.45}}
+#card{--cw:min(90vw,360px);--ch:min(84dvh,calc(var(--cw)*1.62));width:var(--cw);height:var(--ch);left:calc(50% - var(--cw)/2);top:calc(50% - var(--ch)/2);z-index:3;transform-style:preserve-3d;cursor:default}
+.f{position:absolute;inset:0;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 12px 34px rgba(80,20,40,.35)}
+#cf{perspective:1200px;background:#fff8f1}
+#cb{transform:rotateY(180deg);background:radial-gradient(circle,rgba(255,255,255,.55) 0 6px,transparent 7px) 0 0/30px 30px,#e9a3b8}
+.page{position:absolute;inset:0;z-index:1;padding:5% 7%;border-radius:14px;overflow-y:auto;display:flex;flex-direction:column;justify-content:center;gap:.7em;color:#5b3a2e;font-size:clamp(11.5px,min(3.5vw,1.95dvh),15px);line-height:1.45;font-weight:500}
+.page p{margin:0}
+.ti{font:700 clamp(26px,8vw,32px)/1.05 'Dancing Script',cursive;color:#8e1a33;text-align:center}
+.love{font:700 1.9em/1.1 'Dancing Script',cursive;color:#8e1a33;text-align:center}
+.l{opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+#cf.open .l{opacity:1;transform:none;transition:opacity .7s,transform .7s;transition-delay:calc(var(--i)*.45s + .9s)}
+#close{align-self:center;border:0;border-radius:99px;padding:.65em 1.3em;background:#9e1f3a;color:#fff;font-weight:700;font-size:1em;cursor:pointer}
+.cover{position:absolute;inset:0;z-index:2;border-radius:14px;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform 1.4s cubic-bezier(.6,0,.2,1);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#ffd3de,#f3a2ba)}
+.cover::before{content:"";position:absolute;inset:3.5%;border:2px dashed rgba(255,255,255,.85);border-radius:10px}
+#cf.open .cover{transform:rotateY(-172deg)}
+.bear{font-size:clamp(56px,19vw,80px);line-height:1.1}
+.hb{font:700 clamp(30px,10vw,42px)/1.1 'Dancing Script',cursive;color:#8e1a33}
+.tb{font:700 clamp(42px,14.5vw,60px)/1.05 'Dancing Script',cursive;color:#5b2a1a}
+.ba{font-size:clamp(24px,8vw,32px);margin-top:.3em}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+.fl{position:fixed;bottom:-50px;z-index:0;pointer-events:none;font-size:26px;animation:rise 7s linear forwards}
+@keyframes rise{to{transform:translateY(-118vh) rotate(18deg)}}
+@media(prefers-reduced-motion:reduce){#seal,#hint{animation:none}.fl{display:none}}
+</style>
+</head>
+<body>
+<main id="scene">
+  <div id="top" class="ep">Tu as reçu une lettre 💌</div>
+  <div id="back" class="ep"></div>
+  <div id="card">
+    <div id="cf" class="f">
+      <div class="page">
+        <p class="ti l" style="--i:0">Happy Birthday Teddy Bear 🎂</p>
+        <p class="l" style="--i:1">Je te souhaite tout ce qu’il y a de meilleur sur cette terre.</p>
+        <p class="l" style="--i:2">Sache que tu es une personne que j’apprécie énormément, que j’aime de tout mon cœur, et que je suis très contente de te connaître.</p>
+        <p class="l" style="--i:3">Tu es une personne venue dans ma vie à un moment où j’en avais vraiment besoin, et cela m’a beaucoup marquée. Je n’ai pas toujours les mots pour te le dire, mais sache que tu comptes énormément pour moi et que je t’aime énormément.</p>
+        <p class="l" style="--i:4">Keep going, et continue d’être cette personne qui me fait plaisir, qui me fait rire, cette personne bienveillante, cette merveilleuse personne que tu es.</p>
+        <p class="love l" style="--i:5">I love you 🫶🏾❤️</p>
+        <button id="close" class="l" style="--i:6">Fermer la lettre 💌</button>
+      </div>
+      <div class="cover">
+        <div class="bear">🧸</div>
+        <div class="hb">Happy Birthday</div>
+        <div class="tb">Teddy Bear</div>
+        <div class="ba">🎈🎂🎈</div>
+      </div>
+    </div>
+    <div id="cb" class="f"></div>
+  </div>
+  <div id="flap"></div>
+  <div id="pocket" class="ep"></div>
+  <div id="to" class="ep">For Teddy Bear 🧸</div>
+  <div id="stamp" class="ep">🎂</div>
+  <button id="seal" aria-label="Ouvrir la lettre">♥</button>
+  <div id="hint" class="ep">Touche le sceau pour ouvrir ✨</div>
+</main>
+<canvas id="fx"></canvas>
+<script>
+const $=s=>document.querySelector(s),sc=$('#scene'),card=$('#card'),flap=$('#flap'),seal=$('#seal'),cf=$('#cf'),cv=$('#fx'),cx=cv.getContext('2d');
+const C=['#ff6f91','#ffc15e','#8be0c8','#b79cff','#ffffff','#ff9671'];
+let st='closed',S=.25,P=[],D=1,run=false,t1,t2;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function play(el,fr,o){const a=el.animate(fr,{fill:'forwards',...o});return a.finished.then(()=>{Object.assign(el.style,fr[fr.length-1]);a.cancel()})}
+function rs(){D=window.devicePixelRatio||1;cv.width=innerWidth*D;cv.height=innerHeight*D}
+function fit(){S=Math.min(.6*sc.offsetHeight/card.offsetHeight,.5);card.style.transform='scale('+S+')'}
+function add(x,y,n,conf){for(let i=0;i<n;i++){const a=Math.random()*6.283,s=conf?3+Math.random()*9:.3+Math.random()*1.1;P.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-(conf?5:.4),g:conf?.22:0,l:1,d:conf?.007:.012+Math.random()*.01,r:Math.random()*6,vr:(Math.random()-.5)*.3,z:conf?3+Math.random()*4:3+Math.random()*5,c:C[i%C.length],conf})}if(!run){run=true;requestAnimationFrame(tick)}}
+function tick(){cx.clearRect(0,0,cv.width,cv.height);P=P.filter(p=>p.l>0&&p.y<innerHeight+30);
+for(const p of P){p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=p.conf?.985:1;p.r+=p.vr;p.l-=p.d;cx.save();cx.translate(p.x*D,p.y*D);cx.rotate(p.r);cx.globalAlpha=Math.min(1,p.l*1.5);cx.fillStyle=p.c;
+if(p.conf)cx.fillRect(-p.z*D,-p.z*.5*D,p.z*2*D,p.z*D);else{const s=p.z*D*(1+Math.sin(p.l*14)*.35);cx.beginPath();for(let k=0;k<8;k++){const q=k%2?s*.3:s*1.6,a=k*Math.PI/4;cx.lineTo(Math.cos(a)*q,Math.sin(a)*q)}cx.fill()}cx.restore()}
+if(P.length)requestAnimationFrame(tick);else run=false}
+function boom(x,y,n,m){add(x,y,n,1);add(x,y,Math.round(n/2),0);if(m)add(x,y,m,0)}
+function ring(){const r=card.getBoundingClientRect(),e=Math.random();let x,y;if(e<.35){x=r.left+Math.random()*r.width;y=r.top+Math.random()*10-4}else if(e<.7){x=r.left+Math.random()*r.width;y=r.bottom-6+Math.random()*10}else{x=(e<.85?r.left:r.right)+Math.random()*10-5;y=r.top+Math.random()*r.height}add(x,y,2,0)}
+function floaty(){const s=document.createElement('span');s.className='fl';s.textContent=['🎈','🤍','🧸','✨','🎈'][Math.floor(Math.random()*5)];s.style.left=Math.random()*92+'vw';s.style.animationDuration=6+Math.random()*4+'s';document.body.prepend(s);setTimeout(()=>s.remove(),11000)}
+async function open(){
+ if(st!=='closed')return;st='busy';
+ const H=sc.offsetHeight,r=sc.getBoundingClientRect(),X=r.left+r.width/2,Y=r.top+H/2;
+ seal.classList.add('pop');flap.classList.add('up');boom(X,Y,36,10);
+ setTimeout(()=>flap.classList.add('behind'),380);
+ await sleep(750);
+ const up=-(card.offsetHeight*S/2+.25*H);
+ await play(card,[{transform:'translateY(0px) scale('+S+')'},{transform:'translateY('+up+'px) scale('+S+')'}],{duration:900,easing:'ease-out'});
+ card.style.zIndex=20;sc.classList.add('away');boom(X,Y+up,26,10);
+ await play(card,[{transform:'translateY('+up+'px) scale('+S+') rotateY(0deg)'},{transform:'translateY(0px) scale(1) rotateY(720deg)'}],{duration:1900,easing:'cubic-bezier(.3,.1,.2,1)'});
+ boom(innerWidth/2,innerHeight/2,70,24);
+ t1=setInterval(ring,110);t2=setInterval(floaty,800);
+ await sleep(1500);cf.classList.add('open');await sleep(900);boom(innerWidth/2,innerHeight*.3,24,12);st='open';
+}
+async function close(){
+ if(st!=='open')return;st='busy';
+ cf.classList.remove('open');clearInterval(t1);clearInterval(t2);
+ await sleep(1500);sc.classList.remove('away');
+ const up=-(card.offsetHeight*S/2+.25*sc.offsetHeight);
+ await play(card,[{transform:'translateY(0px) scale(1) rotateY(720deg)'},{transform:'translateY('+up+'px) scale('+S+') rotateY(0deg)'}],{duration:1500,easing:'ease-in-out'});
+ card.style.zIndex=3;
+ await play(card,[{transform:'translateY('+up+'px) scale('+S+')'},{transform:'translateY(0px) scale('+S+')'}],{duration:800,easing:'ease-in'});
+ flap.classList.remove('behind','up');await sleep(850);
+ seal.classList.remove('pop');seal.classList.add('stampin');
+ const r=seal.getBoundingClientRect();add(r.left+r.width/2,r.top+r.height/2,10,0);
+ await sleep(650);seal.classList.remove('stampin');st='closed';
+}
+sc.addEventListener('click',open);
+$('#close').addEventListener('click',e=>{e.stopPropagation();close()});
+addEventListener('resize',()=>{rs();if(st==='closed')fit()});
+rs();fit();
+</script>
+</body>
+</html>
